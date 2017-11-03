@@ -8,9 +8,9 @@ if __name__ == '__main__':
 @app.route("/")
 def render_home():
      return render_template('counties.html')
-def (counties):    #Make a dictionary that has a key for each state and the values keep track of the number of counties in each state
+def get_state_options(counties):    #Make a dictionary that has a key for each state and the values keep track of the number of counties in each state
     state = []
     for c in counties:
         if not c["State"] in state:
             state.append(c["State"])
-    print(state)    
+        options += Markup("<option value=\"" + s + "\">" + s + "</option>")    
