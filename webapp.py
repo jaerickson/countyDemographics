@@ -6,7 +6,9 @@ app = Flask(__name__)
     
 @app.route("/")
 def render_home():
-     return render_template('counties.html')
+    with open('county_demographics.json') as demographics_data:
+        counties = json.load(demographics_data)
+    return render_template('counties.html')
 def get_state_options(counties):    #Make a dictionary that has a key for each state and the values keep track of the number of counties in each state
     state = []
     for c in counties:
