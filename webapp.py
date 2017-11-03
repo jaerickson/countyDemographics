@@ -10,9 +10,9 @@ def render_home():
         counties = json.load(demographics_data)
     return render_template('counties.html')
 def get_state_options(counties):    #Make a dictionary that has a key for each state and the values keep track of the number of counties in each state
-    state = []
+    s = []
     for c in counties:
-        if not c["State"] in state:
+        if not c["State"] in s:
             state.append(c["State"])
         options += Markup("<option value=\"" + s + "\">" + s + "</option>")    
 if __name__ == '__main__':
