@@ -3,9 +3,6 @@ import os
 import json
 
 app = Flask(__name__)
- 
-
-
 @app.route("/")
 def render_home():
     with open('county_demographics.json') as demographics_data:
