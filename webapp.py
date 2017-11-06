@@ -5,7 +5,7 @@ import json
 app = Flask(__name__)
     
 @app.route("/")
-def render_home(states):
+def render_home('states'):
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
     return render_template('counties.html',states=get_state_options(counties))
