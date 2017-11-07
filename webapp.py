@@ -10,12 +10,12 @@ def render_home():
     return render_template('home.html',states=get_state_options(counties))
 
 def get_state_options(counties):
-    options = str("")
+    options = ""
     s = []
     for c in counties:
         if not c["State"] in s:
             s.append(c["State"])
-        options += str(Markup("<option value=\"" + s + "\">" + s + "</option>"))
+        options += Markup("<option value=\"" + s + "\">" + s + "</option>")
     return options
 if __name__ == '__main__':
     app.run(debug=False, port=54321)
