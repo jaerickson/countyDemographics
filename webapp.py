@@ -15,7 +15,7 @@ def get_state_options(counties):
     for c in counties:
         if not c["State"] in s:
             s.append(c["State"])
-        options += str(Markup("<option value=\"" + s + "\">" + s + "</option>")) 
-    return options
+        options += Markup("<option value=\"" + s + "\">" + s + "</option>") 
+    return str(options)
 if __name__ == '__main__':
     app.run(debug=False, port=54321)
