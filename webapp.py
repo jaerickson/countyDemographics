@@ -6,9 +6,9 @@ app = Flask(__name__)
 
 def get_state_options():
     with open('county_demographics.json') as demographics_data:
-        counties = json.load(demographics_data)
+        states = json.load(demographics_data)
     options = ""
-    currentState = counties[0]["State"]
+    currentState = states[0]["State"]
     for c in counties:
         if c["State"] != currentState:
             options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
