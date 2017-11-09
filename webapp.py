@@ -8,11 +8,11 @@ def get_state_options():
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
     options = ""
-     s = []
+    s = []
     for c in counties:
-        if not c["State"] in s:
-            s.append(c["State"])
-            options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
+    if not c["State"] in s:
+        s.append(c["State"])
+        options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
     return options
 @app.route("/")
 def render_home():   
