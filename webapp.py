@@ -12,7 +12,7 @@ def get_state_options():
     for c in counties:
         if not c["State"] in s:
             s.append(c["State"])
-            options += Markup("<option value=\"" + s + "\">" + s + "</option>")
+            options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
     return options
 @app.route("/")
 def render_home():   
