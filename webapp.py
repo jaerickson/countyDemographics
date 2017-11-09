@@ -8,6 +8,7 @@ def get_state_options():
     with open('county_demographics.json') as demographics_data:
         state = json.load(demographics_data)
     options = ""
+    
     currentState = state[0]["State"]
     for c in state:
         if c["State"] != currentState:
