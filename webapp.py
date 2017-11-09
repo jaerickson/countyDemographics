@@ -10,7 +10,7 @@ def get_state_options():
     options = ""
      s = []
     for c in counties:
-        if c["State"] != s:
+        if not c["State"] in s:
             s.append(c["State"])
             options += Markup("<option value=\"" + s + "\">" + s + "</option>")
     return options
