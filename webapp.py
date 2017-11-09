@@ -13,7 +13,7 @@ def get_state_options():
         if not c["State"] in s:
             s.append(c["State"])
             options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
-        return options
+    return options
 @app.route("/")
 def render_home():   
     return render_template('home.html',states=get_state_options())
