@@ -29,6 +29,6 @@ def state_fun_fact(states)
     return d +" is the highest percentage women owned of "+ s +" "+ str(most_women_owned) +"% women owned"
 @app.route("/")
 def render_home():   
-    return render_template('home.html',states=get_state_options(), fact=Stae_fun_fact(states))
+    return render_template('home.html',states=get_state_options(), fact=State_fun_fact(states))
 if __name__ == '__main__':
     app.run(debug=False, port=54321)
