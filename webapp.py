@@ -14,7 +14,7 @@ def get_state_options():
             s.append(c["State"])
             options += Markup("<option value=\"" + c["State"] + "\">" + c["State"] + "</option>")
     return options
-def state_fun_fact(states)
+def state_fun_fact(states):
     with open('county_demographics.json') as demographics_data:
         counties = json.load(demographics_data)
     s = counties[0]["State"]
@@ -29,6 +29,6 @@ def state_fun_fact(states)
     return d +" is the highest percentage women owned of "+ s +" "+ str(most_women_owned) +"% women owned"
 @app.route("/")
 def render_home():   
-    return render_template('home.html',states=get_state_options(), fact=state_fun_fact(str(request.args(states))))
+    return render_template('home.html',states=get_state_options(), fact=state_fun_fact(request.args(states)))
 if __name__ == '__main__':
     app.run(debug=False, port=54321)
