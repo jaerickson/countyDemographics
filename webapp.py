@@ -21,7 +21,7 @@ def state_fun_fact(states):
     d = counties[0]["County"]
     
     for c in counties:
-        if c["State"] = states:
+        if c["State"] == states:
             most_women_owned = counties[0]["Employment"]["Firms"]["Women-Owned"]
             if c["Employment"]["Firms"]["Women-Owned"] > most_women_owned:
                 most_women_owned = c["Employment"]["Firms"]["Women-Owned"]
